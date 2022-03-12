@@ -1,2 +1,13 @@
-<app-cabecera></app-cabecera>
-<button></button>
+<div>
+<p *ngIf="name">El nombre es : {{name}}</p>
+<input type="text" [(ngModel)]="name">
+</div>
+
+<ul>
+    <li (click)="onCityClicked(city)" *ngFor="let city of cities" [ngClass]="{'selected': city=== selection}">{{city}}</li>
+</ul>
+
+<div *ngIf="selection">
+    <p>Your city is : {{selection}}</p>
+    <button (click)="onCityClear()">Clear</button>
+</div>
