@@ -1,13 +1,23 @@
-<div>
-<p *ngIf="name">El nombre es : {{name}}</p>
-<input type="text" [(ngModel)]="name">
-</div>
 
-<ul>
-    <li (click)="onCityClicked(city)" *ngFor="let city of cities" [ngClass]="{'selected': city=== selection}">{{city}}</li>
-</ul>
 
-<div *ngIf="selection">
-    <p>Your city is : {{selection}}</p>
-    <button (click)="onCityClear()">Clear</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-form-new-item (newItemEvent)="addNewCity($event)" [Label]="'City'" [className]="'btn-info'"></app-form-new-item>
+        </div>
+        <div class="col-md-8">
+            <div>
+                <ul>
+                    <li (click)="onCityClicked(city)" *ngFor="let city of cities" [ngClass]="{'alert alert-info': city=== selection}">{{city}}</li>
+                </ul>
+                
+              
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="selection">
+                <p>Your city is : {{selection}}</p>
+                <app-boton (click)="onCityClear()" [color]="'blue'" [label]="'Clear your selection'">Clear </app-boton>
+            </div>
+        </div>
+    </div>
 </div>

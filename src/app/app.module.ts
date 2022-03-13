@@ -4,11 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
+import { BotonComponent } from './boton/boton.component';
+import { FormNewItemComponent } from './form-new-item/form-new-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    BotonComponent,
+    FormNewItemComponent
   ],
   imports: [
     BrowserModule,

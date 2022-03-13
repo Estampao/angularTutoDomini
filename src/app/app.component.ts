@@ -1,4 +1,4 @@
-import { Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import { Component, NgModule, OnChanges, OnDestroy, OnInit, SimpleChanges } from
 })
 
 
-export class AppComponent implements OnChanges, OnInit, OnDestroy{
+export class AppComponent{
 
 
   cities = ['Barcelona','Madrid','Valencia'];
@@ -15,19 +15,11 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy{
   title = 'tst1';
   selection !: string;
 
-  ngOnInit(): void {
-    console.log('OnInit->');
+  addNewCity(city : string): void {
+    this.cities.push(city);
   }
 
-  ngOnChanges(changes:SimpleChanges):void{
-    console.log('Change->', changes);
-  }
-
-  ngOnDestroy(): void {
-    console.log('Destroy');
-  }
-
-  onCityClicked(city : string){
+  onCityClicked(city : string):void{
     console.log('City->',city);
     this.selection = city;
   }
